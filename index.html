@@ -1,0 +1,55 @@
+<html>
+    <meta name="description" content="流浪地球2 倒计时">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="senge-dev">
+    <meta charset="UTF-8">
+    <head>
+        <title>跳转倒计时：5秒</title>
+    </head>
+    <body>
+        <h2 class="distance_zh_cn_1">距离网页跳转</h1>
+        <h2 class="distance_zh_cn_2">还有</h1>
+        <h2 class="distance_zh_cn_3">秒</h1>
+        <h3 class="distance_en_us_1">PAGE REDIRECTION</h4>
+        <h3 class="distance_en_us_2">IN</h4>
+        <h3 class="distance_en_us_3">SECONDS</h4>
+        <div class="line"></div>
+        <!-- 新建两个文本，使其动态改变时间 -->
+        <h1 class="time_h1">5</h1>
+        <h3 class="time_h3">5</h3>
+        <!-- 加载JavaScript和CSS -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+        <style>
+        
+@media (prefers-color-scheme:dark){body{background-color:#222222}h2{color:#FFFFFF;font-size:50px}h3{color:#FFFFFF;font-size:25px}}@media (prefers-color-scheme:light){body{background-color:#DDDDDD}h2{color:#000000;font-size:50px}h3{color:#000000;font-size:25px}}h1{color:#D64249;font-size:140px}.distance_zh_cn_1{margin:100px 0 0 100px}.distance_zh_cn_2{margin:0 0 0 300px}.distance_zh_cn_3{margin:-65px 0 0 500px}.distance_en_us_1{margin:0 0 0 300px}.distance_en_us_2{margin:0px 0 0 300px}.distance_en_us_3{margin:-33px 0 0 360px}.line{width:4px;height:130px;background-color:#D64249;margin:-130 0 0 293px}.time_h1{margin:-230px 0 0 405px}.time_h3{margin:12px 0 0 339px}.icp{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:20px}
+        </style>
+        <script type="text/javascript">
+        // 设置5秒倒计时
+var time = 5;
+// 设置一个定时器，每秒执行一次
+var timer = setInterval(function(){
+    // 每次减一
+    time--;
+    // 如果时间小于等于0，就停止计时，并跳转到https://senge.dev
+    if(time <= 0){
+        clearInterval(timer);
+        document.title = "正在跳转..."
+        // 跳转到https://senge.dev
+        window.location.href = "https://senge.dev";
+    }
+    // 将时间显示在页面上
+    document.querySelector(".time_h1").innerHTML = time;
+    document.querySelector(".time_h3").innerHTML = time;
+    // 设置标题
+    if(time > 0){
+        document.title = "跳转倒计时：" + time + "秒";
+    }
+    if(time < 2){
+        document.querySelector(".distance_en_us_3").innerHTML = "SECOND";
+    }
+},1000);
+        </script>
+        <!-- 添加底部备案号，并将备案号重定向到https://beian.miit.gov.cn -->
+        <!-- <a href="https://beian.miit.gov.cn" target="_blank", class="icp">撅ICP备114514191981号-0</a> -->
+    </body>
+</html>
